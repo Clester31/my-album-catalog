@@ -9,21 +9,19 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Raleway", Helvetica;
+  font-family: 'Raleway', Helvetica;
 }
 
 /* Custom scrollbar styling */
@@ -32,7 +30,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--foreground); /* Color of the scrollbar thumb */
+  background-color: #193cb8; /* Color of the scrollbar thumb */
   border-radius: 4px; /* Rounded edges for the thumb */
 }
 

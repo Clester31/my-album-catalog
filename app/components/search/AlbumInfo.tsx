@@ -54,7 +54,7 @@ export default function AlbumInfo({ album, hideDisplay }: AlbumInfoProps) {
             },
             dateAdded: new Date().toISOString(),
             catalogId: currentCatalog || '',
-        }   
+        }
         addAlbumToCatalog(newCatalogItem);
         hideDisplay(false);
     }
@@ -66,58 +66,62 @@ export default function AlbumInfo({ album, hideDisplay }: AlbumInfoProps) {
     }
 
     return (
-        <div className="flex flex-col mt-2 flex overflow-y-auto overflow-x-hidden items-center gap-4 h-[calc(100vh-160px)]">
+        <div className="flex flex-col mt-2 flex overflow-x-hidden items-center gap-4 h-[calc(100vh-160px)]">
             <div className="flex flex-row justify-end w-full mr-16">
                 <button className="bg-white text-black px-4 rounded cursor-pointer" onClick={() => hideDisplay(false)}>Close</button>
             </div>
-            <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6">
-                <h1 className="text-lg font-semibold">{album?.title}</h1>
-                <h2 className="text-gray-200">{album?.artist}</h2>
-                <img src={album?.cover || '/noimage.png'} alt="Album Cover" className="w-40" />
-            </div>
-            <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6">
-                <h1>Add a rating</h1>
-                <StarRating maxRating={10} size={28} onSetRating={handleAlbumRating} />
-            </div>
-            <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6">
-                <button className="w-3/4 bg-white text-black rounded hover:bg-gray-200 cursor-pointer "
-                    onClick={() => setShowTracklist(!showTracklist)}>
-                    {showTracklist ? "Hide Tracklist" : "Show Tracklist"}</button>
-                {
-                    showTracklist &&
-                    <div className="flex flex-col items-center w-full overflow-y-auto overflow-x-hidden mt-4">
-                        {album?.tracks.map((track, index) => {
-                            return (
-                                <div key={index} className="flex flex-row justify-between w-full p-2 border-gray-200 transition-300" onMouseEnter={() => setHoveredTrackIndex(index)} onMouseLeave={() => setHoveredTrackIndex(null)}>
-                                    {
-                                        hoveredTrackIndex === index ?
-                                            <StarRating maxRating={10} size={20} defaultRating={trackRatings[index]} onSetRating={(rating: number) => handleTrackRating(index, rating)} />
-                                            :
-                                            <div className="flex flex-row justify-between w-full">
-                                                <h1 className="truncate w-3/4">{track.title}</h1>
-                                                <h2 className="w-1/4 text-right">{setTime(Number(track.duration))}</h2>
-                                            </div>
-                                    }
-                                </div>
-                            )
-                        })}
-                    </div>
-                }
-            </div>
-            <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6 gap-4">
-                <h1>Review</h1>
-                <textarea className="w-full h-32 bg-white text-black rounded p-2" placeholder="Write your review here (250 characters max)" maxLength={250} onChange={(e) => setAlbumReview(e.target.value)}></textarea>
-            </div>
-            <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6 gap-4">
-                <h1>Date Listened</h1>
-                <input 
-                    type="date" 
-                    className="w-full bg-white text-black rounded" 
-                    onChange={(e) => setDateListened(e.target.value)} 
-                />
-            </div>
-            <div>
-                <button className="bg-white p-4 w-max text-xl text-black rounded items-center mb-16 mt-4 hover:bg-gray-200 cursor-pointer" onClick={() => addToCatalog()}>Add to Catalog</button>
+            <div className="overflow-y-auto w-full h-full flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6">
+                    <h1 className="text-lg font-semibold">{album?.title}</h1>
+                    <h2 className="text-gray-200">{album?.artist}</h2>
+                    <img src={album?.cover || '/noimage.png'} alt="Album Cover" className="w-40" />
+                </div>
+                <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6 gap-2">
+                    <h1 className="font-semibold">Album Rating</h1>
+                    <StarRating maxRating={10} color={'#193cb8'} size={36} onSetRating={handleAlbumRating} />
+                </div>
+                <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6">
+                    <button className="w-3/4 bg-white text-black rounded hover:bg-gray-200 cursor-pointer "
+                        onClick={() => setShowTracklist(!showTracklist)}>
+                        {showTracklist ? "Hide Tracklist" : "Show Tracklist"}</button>
+                    {
+                        showTracklist &&
+                        <div className="flex flex-col items-center w-full overflow-y-auto overflow-x-hidden mt-4">
+                            {album?.tracks.map((track, index) => {
+                                return (
+                                    <div key={index} className="flex flex-row justify-between w-full p-2 border-gray-200 transition-300">
+                                        {
+                                            hoveredTrackIndex === index ?
+                                                <div className="h-8">
+                                                    <StarRating maxRating={10} size={28} color={'#193cb8'} defaultRating={trackRatings[index]} onSetRating={(rating: number) => handleTrackRating(index, rating)} />
+                                                </div>
+                                                :
+                                                <div className="h-8 flex flex-row justify-between w-full">
+                                                    <h1 className="truncate w-3/4 text-xl" onMouseEnter={() => setHoveredTrackIndex(index)} onMouseLeave={() => setHoveredTrackIndex(null)}>{track.title}</h1>
+                                                    <h2 className="w-1/4 text-right">{setTime(Number(track.duration))}</h2>
+                                                </div>
+                                        }
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    }
+                </div>
+                <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6 gap-4">
+                    <h1>Review</h1>
+                    <textarea className="w-full h-32 bg-white text-black rounded p-2" placeholder="Write your review here (250 characters max)" maxLength={250} onChange={(e) => setAlbumReview(e.target.value)}></textarea>
+                </div>
+                <div className="flex flex-col items-center border-b-1 border-gray-200 pb-4 w-5/6 gap-4">
+                    <h1>Date Listened</h1>
+                    <input
+                        type="date"
+                        className="w-full bg-white text-black rounded"
+                        onChange={(e) => setDateListened(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <button className="bg-white p-4 w-max text-xl text-black rounded items-center mb-16 mt-4 hover:bg-gray-200 cursor-pointer" onClick={() => addToCatalog()}>Add to Catalog</button>
+                </div>
             </div>
         </div>
     )

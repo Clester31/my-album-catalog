@@ -10,17 +10,17 @@ export default function Navbar() {
     const [showSignInPopup, setShowSignInPopup] = useState<boolean>(false);
 
     return (
-        <div className="flex flex-row justify-between items-center border-b-2 border-white p-4 mx-4">
+        <div className="flex flex-row justify-between items-center p-2 bg-gradient-to-b from-gray-100 to-gray-200 shadow-lg text-blue-800">
             <div className="w-1/3 flex justify-start items-center">
-                <i className="fa-solid fa-circle-info text-2xl text-start"></i>
+                <i className="fa-solid fa-circle-info text-3xl text-start"></i>
             </div>
             <div className="w-1/3 flex justify-center items-center">
-                <h1 className="text-lg font-semibold">My Album Catalog</h1>
+                <h1 className="text-2xl font-semibold">My Album Catalog</h1>
             </div>
             <div className="w-1/3 flex justify-end items-center">
                 {user ? (
                     <button
-                        className="bg-white text-black px-4 rounded"
+                        className="bg-blue-800 text-white px-4 text-lg rounded cursor-pointer hover:bg-blue-600 transition duration-150 ease-in-out"
                         onClick={() => {
                             signOut();
                             window.location.reload();
@@ -30,7 +30,7 @@ export default function Navbar() {
                     </button>
                 ) : (
                     <button
-                        className="bg-white text-black px-4 rounded"
+                        className="bg-blue-800 px-4 rounded"
                         onClick={() => setShowSignInPopup(!showSignInPopup)}
                     >
                         Sign In

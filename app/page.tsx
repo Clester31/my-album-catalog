@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <div className="mx-4">
-      <div className="flex flex-row mt-4 gap-4">
+      <div className="flex flex-row mt-8 gap-4">
         <div className=" h-[calc(100vh-100px)] flex items-center justify-center">
           {
             hideAlbumSearch ?
