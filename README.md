@@ -1,6 +1,8 @@
 # Introduction
 
-Welcome to My Album Catalog - A website for music fans to create, share, and customize their own music listening catalogs. For the last four years, I have been maintaining a thorough catalog of every album that I have listened to since the start of college using a spreadsheet. This gave me the inspiration to create an app where music enthusiasts can easily create extensive catalogs to not only rate albums, but also write short reviews, rate individual tracks, and sort items using a variety of filters. Using Last.FM's API, user's have access to the discographies of thousands of artists, making it perfect for those who listen to many, or a few albu,s
+Welcome to My Album Catalog - A website for music fans to create, share, and customize their own music listening catalogs. For the last four years, I have been maintaining a thorough catalog of every album that I have listened to since the start of college using a spreadsheet. This gave me the inspiration to create an app where music enthusiasts can easily create extensive catalogs to not only rate albums, but also write short reviews, rate individual tracks, and sort items using a variety of filters. Using Last.FM's API, user's have access to the discographies of thousands of artists, making it perfect for those who listen to many, or only a few albums
+
+You can try out the app [here](https://my-album-catalog-uybe-6y52b4rmh-clester31s-projects.vercel.app/) and check out an example cataog [here](https://my-album-catalog-uybe-6y52b4rmh-clester31s-projects.vercel.app/view/c63e1e54-5198-4552-933b-0562c637a8bb)
 
 # Features
 
