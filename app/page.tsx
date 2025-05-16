@@ -37,11 +37,11 @@ export default function Home() {
           {
             hideAlbumSearch ?
               <button>
-                <i className="fa-solid fa-caret-right cursor-pointer text-4xl text-start hover:scale-110 hover:text-orange-500 transition-250 ease-in" onClick={() => setHideAlbumSearch(false)}></i>
+                <i className="fa-solid fa-caret-right cursor-pointer text-4xl text-start hover:scale-110 hover:text-blue-800 transition-250 ease-in" onClick={() => setHideAlbumSearch(false)}></i>
               </button>
               :
               <button>
-                <i className="fa-solid fa-caret-left cursor-pointer text-4xl text-start hover:scale-110 hover:text-orange-500 transition-250 ease-in" onClick={() => setHideAlbumSearch(true)}></i>
+                <i className="fa-solid fa-caret-left cursor-pointer text-4xl text-start hover:scale-110 hover:text-blue-800 transition-250 ease-in" onClick={() => setHideAlbumSearch(true)}></i>
               </button>
           }
         </div>

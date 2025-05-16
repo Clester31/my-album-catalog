@@ -56,7 +56,7 @@ export default function View({ params }: { params: Promise<{ id: string }> }) {
     return (
         <div className={`flex flex-col h-[calc(100vh-100px)] gap-4 border-2 border-white p-4 mt-4 overflow-y-hidden`}>
             <div className="flex flex-col gap-4 h-full p-4">
-                <div className="flex flex-row items-center gap-4 bg-gray-800 p-2 rounded justify-between px-4">
+                <div className="">
                     <CatalogOptions
                         filterView={filterView}
                         setFilterView={setFilterView}

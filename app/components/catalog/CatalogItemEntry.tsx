@@ -35,8 +35,8 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
     };
 
     return (
-        <div className="flex flex-row border-2 border-white rounded-lg h-72 my-2">
-            <div className="w-40 bg-black px-2">
+        <div className="flex flex-row border-4 border-gray-300 rounded-4xl h-72 my-2 bg-white shadow-lg">
+            <div className="w-40 px-2">
                 <div className="p-2">
                     <h1
                         className="font-semibold truncate"
@@ -63,16 +63,16 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                 <div className="flex flex-row gap-2 p-2">
                     {!editRating ? (
                         <div className="flex flex-row gap-2 items-center text-center h-10">
-                            <div className="flex flex-row gap-2 items-center bg-gray-800 w-28 p-2 rounded-lg hover:bg-gray-700 transition-all duration-300 ease-in-out cursor-pointer"
+                            <div className="flex flex-row gap-2 items-center bg-white border-3 border-blue-800 w-28 p-2 rounded-lg hover:bg-blue-200 transition-all duration-300 ease-in-out cursor-pointer"
                                 title="Click to edit rating"
                                 onClick={() => {
-                                    if(!disableControls) {
+                                    if (!disableControls) {
                                         setEditRating(true)
                                     }
                                 }}
                             >
-                                <i className="fa-solid fa-star text-amber-500 text-2xl"></i>
-                                <h1 className="text-amber-500 font-bold text-3xl">
+                                <i className="fa-solid fa-star text-blue-500 text-2xl"></i>
+                                <h1 className="text-blue-800 font-bold text-3xl">
                                     {item.albumInfo.rating}
                                 </h1>
                             </div>
@@ -88,13 +88,13 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                             <input
                                 min={1}
                                 max={10}
-                                defaultValue={item.albumInfo.rating}
-                                className="w-16 bg-white text-black rounded-md text-center"
+                                placeholder="1-10"
+                                className="w-16 bg-white text-blue-800 font-semibold text-xl border-3 border-blue-800 rounded-md text-center"
                                 type="number"
                                 onChange={(e) => setNewRating(Number(e.target.value))}
                             />
                             <button
-                                className="bg-amber-500 w-8 h-8 rounded-md text-black cursor-pointer"
+                                className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white w-8 h-8 rounded-md cursor-pointer"
                                 onClick={changeAlbumRating}
                             >
                                 <i className="fa-solid fa-pencil"></i>
@@ -106,22 +106,23 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                     <h1>{item.albumInfo.dateListened}</h1>
                 </div>
             </div>
+            <div className="flex -ml-4 items-center text-center mr-4 relative">
+                    <div className="absolute">
+                        {
+                            showSidePanel ? (
+                                <i className="fa-solid fa-caret-left text-4xl cursor-pointer text-blue-800 transition-opacity duration-300 ease-in-out hover:text-blue-600" onClick={() => setShowSidePanel(!showSidePanel)}></i>
+                            ) : (
+                                <i className="fa-solid fa-caret-right text-4xl cursor-pointer text-blue-800 transition-opacity duration-300 ease-in-out hover:text-blue-600" onClick={() => setShowSidePanel(!showSidePanel)}></i>
+                            )
+                        }
+                    </div>
+                </div>
             <div
                 className={`flex flex-row gap-2 p-4 transition-all duration-300 ease-in-out overflow-hidden ${showSidePanel
-                    ? "w-86 text-white bg-gradient-to-r from-black to-gray-600 overflow-y-scroll overflow-x-hidden"
-                    : "w-8 text-transparent bg-gradient-to-r from-black to-gray-600"
+                    ? "w-86 text-black overflow-y-scroll overflow-x-hidden rounded-r-4xl"
+                    : "w-8 text-transparent rounded-r-4xl"
                     }`}
-                onClick={() => setShowSidePanel(!showSidePanel)}
             >
-                <div className="flex items-center text-center">
-                    {
-                        showSidePanel ? (
-                            <i className="fa-solid fa-caret-left text-2xl cursor-pointer text-white transition-opacity duration-300 ease-in-out hover:text-amber-500"></i>
-                        ) : (
-                            <i className="fa-solid fa-caret-right text-2xl cursor-pointer text-white transition-opacity duration-300 ease-in-out hover:text-amber-500"></i>
-                        )
-                    }
-                </div>
                 <div className="flex flex-col gap-4 w-full">
                     {
                         !disableControls &&
@@ -145,7 +146,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                         className={`${showSidePanel ? "opacity-100" : "opacity-0"
                             } flex-col gap-2 transition-opacity duration-300 ease-in-out`}
                     >
-                        <div className="p-2 bg-gray-700 w-72 rounded-lg border-2 border-white flex flex-row">
+                        <div className="p-2 bg-gray-100 w-72 rounded-lg border-2 border-gray-300 flex flex-row">
                             {
                                 editReview ? (
                                     <div className="flex flex-row items-center w-full gap-2">
@@ -171,14 +172,14 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                     </div>
                     <div
                         className={`${showSidePanel ? "opacity-100" : "opacity-0"
-                            } flex-col gap-2 transition-opacity duration-300 ease-in-out`}
+                            } flex flex-col gap-2 transition-opacity duration-300 ease-in-out`}
                     >
                         {/* tracklist */}
                         {item.albumInfo.tracks.map((track, idx) => {
                             return (
                                 <div
                                     key={idx}
-                                    className="flex flex-row gap-2 p-2 rounded-lg items-center hover:bg-gray-700 transition-all duration-300 ease-in-out w-72 cursor-pointer"
+                                    className="flex flex-row gap-2 p-2 rounded-xl items-center hover:bg-blue-200 border-blue-800 border-3 transition-all duration-300 ease-in-out w-72 cursor-pointer"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!disableControls) {
@@ -187,7 +188,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                     }}
                                     title="Click to edit rating"
                                 >
-                                    <h1 className="text-white truncate w-7/8 text-md overflow-hidden text-ellipsis">
+                                    <h1 className="text-black truncate w-7/8 text-lg overflow-hidden text-ellipsis">
                                         {track.title}
                                     </h1>
                                     {
@@ -196,17 +197,18 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                                 <input
                                                     min={1}
                                                     max={10}
-                                                    defaultValue={track.trackRating}
-                                                    className="w-16 bg-white text-black rounded-md text-center items-center"
+                                                    placeholder="1-10"
+                                                    className="w-16 bg-white text-blue-800 font-semibold text-xl border-3 border-blue-800 rounded-md text-center"
                                                     type="number"
-                                                    onChange={(e) =>
+                                                    onChange={(e) => {
+                                                        e.stopPropagation();
                                                         setNewTrackRating(
                                                             Number(e.target.value)
                                                         )
-                                                    }
+                                                    }}
                                                 />
                                                 <button
-                                                    className="bg-amber-500 w-8 h-8 rounded-md text-black cursor-pointer"
+                                                    className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white w-8 h-8 rounded-md text-black cursor-pointer"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         changeTrackRating()
@@ -217,7 +219,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                             </div>
                                         ) : (
                                             <div className="flex flex-row gap-8 items-center text-center justify-center h-10 w-1/8">
-                                                <h1 className="text-amber-500 font-bold text-2xl w-1/2">
+                                                <h1 className="text-blue-800 font-bold text-2xl w-1/2">
                                                     {item.albumInfo.tracks[idx].trackRating !== 0 ? item.albumInfo.tracks[idx].trackRating : "-"}
                                                 </h1>
                                                 {/* <button

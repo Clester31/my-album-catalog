@@ -30,7 +30,7 @@ export default function CatalogOptions({
     const router = useRouter();
 
     return (
-        <div className="flex flex-row items-center gap-4 bg-gray-800 p-2 rounded justify-between px-4">
+        <div className="flex flex-row items-center gap-4 bg-white border-4 border-gray-300 rounded-4xl p-2 rounded justify-between px-4">
             <div className="flex flex-row gap-4 items-center">
                 <div className="flex flex-row gap-4 items-center">
                     <button disabled={viewMode === 'Yearly'} className="disabled:opacity-50" onClick={() => {
@@ -38,11 +38,11 @@ export default function CatalogOptions({
                                 setFilter("");
                             }}>
                         <i
-                            className={`fa-solid fa-filter text-2xl cursor-pointer ${filterView && "text-amber-500"}`}
+                            className={`fa-solid fa-filter text-2xl cursor-pointer ${filterView && "text-blue-800"}`}
                         ></i>
                     </button>
                     <select
-                        className="bg-white text-black p-1 rounded disabled:opacity-50"
+                        className="bg-gray-100 px-4 rounded-4xl border-2 border-gray-300 text-black p-1 rounded disabled:opacity-50"
                         disabled={!filterView}
                         onChange={(e) => {
                             setFilter(e.target.value);
@@ -61,17 +61,17 @@ export default function CatalogOptions({
                         <option value="Lowest Rating">Lowest Rating</option>
                     </select>
                 </div>
-                <div className="flex flex-row items-center text-black">
+                <div className="flex flex-row items-center text-white">
                     <button
-                        className={`${viewMode === "Standard" ? "bg-amber-500" : "bg-amber-300"
-                            } rounded-l-xl py-1 px-2 w-32 cursor-pointer`}
+                        className={`${viewMode === "Standard" ? "bg-blue-800" : "bg-blue-600 hover:bg-blue-500 transition 150 ease-in-out"
+                            } rounded-l-4xl py-1 px-2 w-32 cursor-pointer`}
                         onClick={() => setViewMode("Standard")}
                     >
                         Standard View
                     </button>
                     <button
-                        className={`${viewMode === "Yearly" ? "bg-amber-500" : "bg-amber-300"
-                            } rounded-r-xl py-1 px-2 w-32 cursor-pointer`}
+                        className={`${viewMode === "Yearly" ? "bg-blue-800" : "bg-blue-600 hover:bg-blue-500 transition 150 ease-in-out"    
+                            } rounded-r-4xl py-1 px-2 w-32 cursor-pointer`}
                         onClick={() => setViewMode("Yearly")}
                     >
                         Yearly View
@@ -82,14 +82,14 @@ export default function CatalogOptions({
                 {
                     showViewButton ? (
                         <button
-                            className="bg-white text-black py-1 px-2 rounded-md cursor-pointer"
+                            className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white py-1 px-4 rounded-4xl cursor-pointer"
                             onClick={() => router.push(`/view/${currentCatalog}`)}
                         >
                             View Catalog
                         </button>
                     ) : (
                         <button
-                            className="bg-white text-black py-1 px-2 rounded-md cursor-pointer"
+                            className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white py-1 px-4 rounded-4xl cursor-pointer"
                             onClick={() => router.push(`/`)}
                         >
                             Return Home
