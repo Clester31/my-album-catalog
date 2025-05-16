@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Introduction
 
-## Getting Started
+Welcome to My Album Catalog - A website for music fans to create, share, and customize their own music listening catalogs. For the last four years, I have been maintaining a thorough catalog of every album that I have listened to since the start of college using a spreadsheet. This gave me the inspiration to create an app where music enthusiasts can easily create extensive catalogs to not only rate albums, but also write short reviews, rate individual tracks, and sort items using a variety of filters. Using Last.FM's API, user's have access to the discographies of thousands of artists, making it perfect for those who listen to many, or a few albu,s
 
-First, run the development server:
+# Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Album Search
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Search for albums using the search bar on the right side of the page
+* Uses Last.FM's API for fetching albums based on search query
+* Selecting an album in the search results will prompt the user to enter an album rating, a catalog date, and optional track ratings and review
+* Can be collapsed using far left arrow button
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Catalog
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* Users can view existing catalogs and create new ones
+* Items can be filtered based off certain criteria (A-Z, rating, date, etc.)
+* Users can also view their albums in a year-by-year format, with albums separated into different sections for the month they were listened to
+* Can toggle a standalone view, which will only show the catalog section with editing permissions disabled
 
-## Learn More
+# Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+* Frontend created using React, Next.JS, and Tailwind
+* Backend set up using Firebase Authentication and Firestore
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# TODO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Improve user autherntication (OAuth, ect.)
+* User profiles where catalogs can be shown off
+* Site-wide album ratings that are updated when a user catalogs/rates an album
