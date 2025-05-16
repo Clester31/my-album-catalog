@@ -4,7 +4,7 @@ import { db } from "./firebase";
 
 export const searchForAlbum = async (query: string) => {
     const albumData: Album[] = [];
-    const res = await fetch(`http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${query}&api_key=${process.env.NEXT_PUBLIC_API_KEY}&format=json`, {
+    const res = await fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${query}&api_key=${process.env.NEXT_PUBLIC_API_KEY}&format=json`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export const searchForAlbum = async (query: string) => {
 }
 
 export const getAlbumInfo = async (artist: string, album: string) => {
-    const res = await fetch(`http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${process.env.NEXT_PUBLIC_API_KEY}&artist=${artist}&album=${album}&format=json`, {
+    const res = await fetch(`https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=${process.env.NEXT_PUBLIC_API_KEY}&artist=${artist}&album=${album}&format=json`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

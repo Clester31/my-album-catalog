@@ -115,7 +115,7 @@ export default function SelectCatalog({ user }: { user: User | null }) {
                                 onChange={(e) => setCatalogDescription(e.target.value)}
                             />
                             <button
-                                className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white w-1/3 px-4 py-2 disabled rounded-4xl m-auto cursor-pointer disabled:opacity-50"
+                                className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out text-white w-1/2 px-4 py-2 disabled rounded-4xl m-auto cursor-pointer disabled:opacity-50"
                                 onClick={submitCatalog}
                                 disabled={!catalogName || !catalogDescription}
                             >
