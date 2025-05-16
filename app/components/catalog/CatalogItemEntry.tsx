@@ -34,9 +34,9 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
     };
 
     return (
-        <div className="flex flex-row border-4 border-gray-300 rounded-4xl h-72 my-2 bg-white shadow-lg">
+        <div className="flex flex-row border-2 border-gray-300 rounded-4xl h-64 my-2 bg-white shadow-lg">
             <div className="w-40 px-2">
-                <div className="p-2">
+                <div className="p-2 text-md">
                     <h1
                         className="font-semibold truncate"
                         title={item.albumInfo.title}
@@ -56,13 +56,13 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                     <img
                         src={item.albumInfo.cover}
                         alt={item.albumInfo.title}
-                        className="w-28 h-28 object-cover rounded"
+                        className="w-24 h-24 object-cover rounded"
                     />
                 </div>
                 <div className="flex flex-row gap-2 p-2">
                     {!editRating ? (
                         <div className="flex flex-row gap-2 items-center text-center h-10">
-                            <div className="flex flex-row gap-2 items-center bg-white border-3 border-blue-800 w-28 p-2 rounded-lg hover:bg-blue-200 transition-all duration-300 ease-in-out cursor-pointer"
+                            <div className="flex flex-row gap-2 items-center bg-white border-2 border-blue-800 w-16 p-1 rounded-lg hover:bg-blue-200 transition-all duration-300 ease-in-out cursor-pointer"
                                 title="Click to edit rating"
                                 onClick={() => {
                                     if (!disableControls) {
@@ -70,8 +70,8 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                     }
                                 }}
                             >
-                                <i className="fa-solid fa-star text-blue-500 text-2xl"></i>
-                                <h1 className="text-blue-800 font-bold text-3xl">
+                                <i className="fa-solid fa-star text-blue-500 text-lg"></i>
+                                <h1 className="text-blue-800 font-bold text-xl">
                                     {item.albumInfo.rating}
                                 </h1>
                             </div>
@@ -88,7 +88,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                 min={1}
                                 max={10}
                                 placeholder="1-10"
-                                className="w-16 bg-white text-blue-800 font-semibold text-xl border-3 border-blue-800 rounded-md text-center"
+                                className="w-16 bg-white text-blue-800 font-semibold text-xl border-2 border-blue-800 rounded-md text-center"
                                 type="number"
                                 onChange={(e) => setNewRating(Number(e.target.value))}
                             />
@@ -101,7 +101,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                         </div>
                     )}
                 </div>
-                <div className="p-2 flex flex-row gap-2 items-center">
+                <div className="px-2 flex flex-row items-center text-xs text-gray-500">
                     <h1>{item.albumInfo.dateListened}</h1>
                 </div>
             </div>
@@ -178,7 +178,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                             return (
                                 <div
                                     key={idx}
-                                    className="flex flex-row gap-2 p-2 rounded-xl items-center hover:bg-blue-200 border-blue-800 border-3 transition-all duration-300 ease-in-out w-72 cursor-pointer"
+                                    className="flex flex-row gap-2 p-2 rounded-xl items-center hover:bg-blue-200 border-blue-800 border-2 transition-all duration-300 ease-in-out w-72 cursor-pointer"
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!disableControls) {
@@ -197,7 +197,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                                     min={1}
                                                     max={10}
                                                     placeholder="1-10"
-                                                    className="w-16 bg-white text-blue-800 font-semibold text-xl border-3 border-blue-800 rounded-md text-center"
+                                                    className="w-16 bg-white text-blue-800 font-semibold text-xl border-2 border-blue-800 rounded-md text-center"
                                                     type="number"
                                                     onChange={(e) => {
                                                         e.stopPropagation();

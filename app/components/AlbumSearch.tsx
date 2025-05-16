@@ -43,7 +43,7 @@ export default function AlbumSearch({ user }: { user: User | null }) {
     };
 
     return (
-        <div className="search_bar bg-gray-100 rounded-xl h-full p-4 relative border-4 border-gray-200">
+        <div className="search_bar bg-gray-100 rounded-xl h-full p-4 relative border-2 border-gray-200">
             <div className="h-max">
                 {displayAlbumInfo ? (
                     <AlbumInfo
@@ -57,7 +57,7 @@ export default function AlbumSearch({ user }: { user: User | null }) {
                             <h1 className="text-lg font-semibold">Search for an Artist</h1>
                             <div className="flex flex-row gap-4 w-full items-center">
                                 <input
-                                    className="w-5/6 border-blue-800 rounded-4xl border-2 bg-white text-black text-xl py-2 px-4 h-10 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-5/6 border-blue-800 rounded-4xl border-2 bg-white text-black text-md py-1 px-4 h-8 disabled:opacity-50 disabled:cursor-not-allowed"
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     onKeyDown={(e) => {
                                         if (e.key === "Enter") {
@@ -67,7 +67,7 @@ export default function AlbumSearch({ user }: { user: User | null }) {
                                     disabled={!user}
                                 />
                                 <button
-                                    className="bg-blue-800 text-white px-4 rounded-4xl ml-2 cursor-pointer h-10 w-1/6 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-600 transition duration-150 ease-in-out"
+                                    className="bg-blue-800 text-white px-4 rounded-4xl ml-2 cursor-pointer h-8 w-1/6 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-600 transition duration-150 ease-in-out"
                                     onClick={() => updateSearchResults(searchQuery)}
                                     disabled={!searchQuery || !user}
                                 >
@@ -76,7 +76,7 @@ export default function AlbumSearch({ user }: { user: User | null }) {
                             </div>
                         </div>
                         {user ? (
-                            <div className="album_list mt-8 flex grid grid-cols-3 gap-4 h-[calc(100vh-280px)] overflow-y-auto overflow-x-hidden relative p-2">
+                            <div className="album_list mt-8 flex grid grid-cols-2 gap-4 h-[calc(100vh-280px)] overflow-y-auto overflow-x-hidden relative p-2">
                                 {searchResults.map((album, index) => (
                                     <SearchedAlbum
                                         key={index}

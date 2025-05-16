@@ -15,21 +15,21 @@ export default function Navbar() {
             {/* Help Icon */}
             <div className="w-1/3 flex justify-start items-center">
                 <i
-                    className="fa-solid fa-circle-info text-3xl text-start cursor-pointer hover:text-blue-600 hover:scale-105 transition 150-ease-in-out"
+                    className="fa-solid fa-circle-info text-xl text-start cursor-pointer hover:text-blue-600 hover:scale-105 transition 150-ease-in-out"
                     onClick={() => setShowHelp(true)}
                 ></i>
             </div>
 
             {/* Title */}
             <div className="w-1/3 flex justify-center items-center">
-                <h1 className="text-2xl font-semibold">My Album Catalog</h1>
+                <h1 className="text-md font-semibold">My Album Catalog</h1>
             </div>
 
             {/* Authentication Buttons */}
             <div className="w-1/3 flex justify-end items-center">
                 {user ? (
                     <button
-                        className="bg-blue-800 text-white px-4 text-lg rounded cursor-pointer hover:bg-blue-600 transition duration-150 ease-in-out"
+                        className="bg-blue-800 text-white px-4 py-1 text-sm rounded cursor-pointer hover:bg-blue-600 transition duration-150 ease-in-out"
                         onClick={() => {
                             signOut();
                             window.location.reload();
@@ -39,7 +39,7 @@ export default function Navbar() {
                     </button>
                 ) : (
                     <button
-                        className="bg-blue-800 text-white px-4 py-1 text-lg rounded cursor-pointer hover:bg-blue-600 transition duration-150 ease-in-out"
+                        className="bg-blue-800 text-white px-4 py-1 text-sm rounded cursor-pointer hover:bg-blue-600 transition duration-150 ease-in-out"
                         onClick={() => setShowSignInPopup(!showSignInPopup)}
                     >
                         Sign In
@@ -53,7 +53,7 @@ export default function Navbar() {
             {/* Help Modal */}
             {showHelp && (
                 <div className="w-full h-full text-black absolute top-0 left-0 bg-black/50 flex flex-col items-center justify-center z-50">
-                    <div className="bg-white p-8 flex flex-col gap-4 border-4 border-gray-300 rounded w-1/3 rounded-4xl items-center justify-center text-center">
+                    <div className="bg-white p-8 flex flex-col gap-4 border-4 border-gray-300 rounded w-2/5 rounded-4xl items-center justify-center text-center">
                         <h1 className="text-xl font-semibold">Welcome to My Album Catalog!</h1>
                         <p>
                             The right side of the app is your catalog. This is where all your album

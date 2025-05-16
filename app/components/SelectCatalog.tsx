@@ -54,10 +54,10 @@ export default function SelectCatalog({ user }: { user: User | null }) {
     }, [user]);
 
     return (
-        <div className="flex flex-row gap-4 justify-center h-8 text-center">
+        <div className="flex flex-row gap-4 justify-center h-6 text-center">
             <select
                 disabled={catalogs.length === 0}
-                className="flex bg-white text-black rounded-4xl text-black h-10 text-lg px-4 border-2 border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed truncate"
+                className="flex bg-white text-black rounded-4xl text-black h-8 text-sm px-4 border-2 border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed truncate"
                 title={catalogs.length === 0 ? "Add a catalog to enable selection" : ""}
                 onChange={(e) => {
                     const selectedCatalog = catalogs.find(
@@ -87,7 +87,7 @@ export default function SelectCatalog({ user }: { user: User | null }) {
                 ))}
             </select>
             <button
-                className="cursor-pointer flex bg-white text-black p-4 text-center items-center font-bold rounded w-10 h-10 justify-center border-2 border-gray-200 hover:text-blue-600 transition 150 ease-in-out text-2xl"
+                className="cursor-pointer flex bg-white text-black p-4 text-center items-center font-bold rounded w-8 h-8 justify-center border-2 border-gray-200 hover:text-blue-600 transition 150 ease-in-out text-2xl"
                 onClick={() => setCreateNewCatalog(true)}
             >
                 +

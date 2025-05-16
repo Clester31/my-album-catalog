@@ -50,7 +50,7 @@ export default function Catalog({ user }: { user: User | null }) {
 
     return (
         <div
-            className={`flex flex-col h-[calc(100vh-100px)] gap-4 p-4 border-4 border-gray-200 bg-gray-100 overflow-y-hidden rounded-xl`}
+            className={`flex flex-col h-[calc(100vh-100px)] gap-4 p-4 border-2 border-gray-200 bg-gray-100 overflow-y-hidden rounded-xl`}
         >
             <SelectCatalog user={user} />
             <div className="flex flex-col gap-4 h-full p-4">
@@ -67,7 +67,7 @@ export default function Catalog({ user }: { user: User | null }) {
                     showViewButton={true}
                 />
                 <div
-                    className={`flex flex-row flex-wrap gap-8 mb-8 ${
+                    className={`flex flex-row flex-wrap gap-4 mb-8 ${
                         viewMode === "Standard" ? "overflow-y-auto" : "overflow-hidden"
                     }`}
                 >

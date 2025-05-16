@@ -9,7 +9,7 @@ interface SearchedAlbumProps {
 export default function SearchedAlbum({ title, artist, cover, onClick }: SearchedAlbumProps) {
     return (
         <div
-            className="flex flex-col bg-white p-4 rounded-xl shadow-lg hover:scale-105 transition duration-100 cursor-pointer h-44 border-gray-300 border-4"
+            className="flex flex-col bg-white p-2 rounded-xl shadow-lg hover:scale-105 transition duration-100 cursor-pointer h-40 border-gray-300 border-2 text-xs"
             onClick={() => onClick(title, artist)}
             title={`${title} by ${artist}`}
         >
@@ -18,7 +18,7 @@ export default function SearchedAlbum({ title, artist, cover, onClick }: Searche
                 alt="Album Cover"
                 className="w-20 rounded"
             />
-            <h1 className="text-lg font-semibold truncate">{title}</h1>
+            <h1 className="font-semibold">{title}</h1>
             <h2 className="italic">{artist}</h2>
         </div>
     );
