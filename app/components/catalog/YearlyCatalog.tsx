@@ -10,7 +10,7 @@ export default function YearlyCatalog({ catalog }: { catalog: CatalogItem[] }) {
         Array.from({ length: 12 }, () => [])
     );
 
-    const [borderColors, setBorderColors] = useState<string[]>([
+    const [borderColors] = useState<string[]>([
         "border-red-400",
         "border-orange-400",
         "border-yellow-400",

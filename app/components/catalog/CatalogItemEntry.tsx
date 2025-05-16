@@ -2,7 +2,6 @@
 import { CatalogItem } from "@/app/types/types";
 import { useState } from "react";
 import { deleteCatalogEntry, updateAlbumRating, updateTrackRating, updateReview } from "@/app/app";
-import { User } from "firebase/auth";
 
 export default function CatalogItemEntry({ item, disableControls }: { item: CatalogItem, disableControls: boolean }) {
     const [showSidePanel, setShowSidePanel] = useState<boolean>(false);

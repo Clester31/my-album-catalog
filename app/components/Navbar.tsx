@@ -58,7 +58,7 @@ export default function Navbar() {
                         <p>
                             The right side of the app is your catalog. This is where all your album
                             ratings/reviews will appear. Start by clicking the + button in the
-                            controls section to create a new catalog. After you've added some items,
+                            controls section to create a new catalog. After you&apos;ve added some items,
                             you can apply different filters and view your items in a yearly/monthly
                             format. The view catalog button will allow you and others to view your
                             catalog with editing restricted.

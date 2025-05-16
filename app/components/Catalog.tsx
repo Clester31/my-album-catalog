@@ -11,6 +11,7 @@ import YearlyCatalog from "./catalog/YearlyCatalog";
 
 export default function Catalog({ user }: { user: User | null }) {
     const [catalogItems, setCatalogItems] = useState<CatalogItem[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [filter, setFilter] = useState<string>("Last Added");
     const [filteredCatalogItems, setFilteredCatalogItems] = useState<CatalogItem[]>([]);
     const [filterView, setFilterView] = useState<boolean>(false);

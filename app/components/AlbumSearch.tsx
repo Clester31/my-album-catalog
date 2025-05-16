@@ -29,6 +29,7 @@ export default function AlbumSearch({ user }: { user: User | null }) {
             cover: allAlbumInfo.image[3]["#text"],
             rating: 0,
             tracks: allAlbumInfo.tracks?.track
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 ? allAlbumInfo.tracks.track.map((track: any) => ({
                         id: track.mbid,
                         albumId: allAlbumInfo.mbid,
