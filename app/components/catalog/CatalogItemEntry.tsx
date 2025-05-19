@@ -145,13 +145,13 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                         className={`${showSidePanel ? "opacity-100" : "opacity-0"
                             } flex-col gap-2 transition-opacity duration-300 ease-in-out`}
                     >
-                        <div className="p-2 bg-gray-100 w-72 rounded-lg border-2 border-gray-300 flex flex-row">
+                        <div className="p-2 bg-gray-100 w-72 rounded-lg border-2 border-gray-300 flex flex-row text-md">
                             {
                                 editReview ? (
                                     <div className="flex flex-row items-center w-full gap-2">
-                                        <textarea defaultValue={item.albumInfo.review} className="bg-white w-9/10 rounded-md text-black p-1" onChange={(e) => setNewReview(e.target.value)} />
+                                        <textarea defaultValue={item.albumInfo.review} className="bg-white w-9/10 rounded-md text-black p-1 text-sm h-32" onChange={(e) => setNewReview(e.target.value)} />
                                         <button
-                                            className="bg-amber-500 w-8 h-8 rounded-md text-black cursor-pointer text-white"
+                                            className="bg-blue-800 hover:bg-blue-600 transition 150 ease-in-out w-8 h-8 rounded-md text-black cursor-pointer text-white"
                                             onClick={changeReview}
                                         >
                                             <i className="fa-solid fa-pencil"></i>
@@ -178,7 +178,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                             return (
                                 <div
                                     key={idx}
-                                    className="flex flex-row gap-2 p-2 rounded-xl items-center hover:bg-blue-200 border-blue-800 border-2 transition-all duration-300 ease-in-out w-72 cursor-pointer"
+                                    className="flex flex-row gap-2 p-2 rounded-md items-center hover:bg-blue-200 border-blue-800 border-2 transition-all duration-300 ease-in-out w-72 cursor-pointer "
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (!disableControls) {
@@ -187,7 +187,7 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                     }}
                                     title="Click to edit rating"
                                 >
-                                    <h1 className="text-black truncate w-7/8 text-lg overflow-hidden text-ellipsis">
+                                    <h1 className="text-black truncate w-7/8 text-md overflow-hidden text-ellipsis">
                                         {track.title}
                                     </h1>
                                     {
@@ -217,8 +217,8 @@ export default function CatalogItemEntry({ item, disableControls }: { item: Cata
                                                 </button>
                                             </div>
                                         ) : (
-                                            <div className="flex flex-row gap-8 items-center text-center justify-center h-10 w-1/8">
-                                                <h1 className="text-blue-800 font-bold text-2xl w-1/2">
+                                            <div className="flex flex-row gap-8 items-center text-center justify-center h-4 w-1/8">
+                                                <h1 className="text-blue-800 font-bold text-lg w-1/2">
                                                     {item.albumInfo.tracks[idx].trackRating !== 0 ? item.albumInfo.tracks[idx].trackRating : "-"}
                                                 </h1>
                                                 {/* <button

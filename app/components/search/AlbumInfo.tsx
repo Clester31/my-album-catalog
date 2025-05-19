@@ -115,7 +115,7 @@ export default function AlbumInfo({ album, hideDisplay }: AlbumInfoProps) {
                                 return (
                                     <div
                                         key={index}
-                                        className="flex flex-row justify-between w-full p-2 border-gray-200 border-2 transition-300 bg-white my-2 px-4 rounded-4xl"
+                                        className="flex flex-row justify-between w-full p-1 border-gray-200 border-2 transition-300 bg-white my-2 px-4 rounded-4xl"
                                     >
                                         {hoveredTrackIndex === index ? (
                                             <div className="h-8 opacity-0 hover:opacity-100 transition 150 ease-in-out gap-">
@@ -133,12 +133,12 @@ export default function AlbumInfo({ album, hideDisplay }: AlbumInfoProps) {
                                             <div
                                                 className="h-8 flex flex-row justify-between w-full opacity-100 hover:opacity-0 transition 300 ease-in-out"
                                                 onMouseEnter={() => setHoveredTrackIndex(index)}
-                                                onMouseLeave={() => setHoveredTrackIndex(null)}
+                                                onMouseLeave={() => setHoveredTrackIndex(null)} 
                                             >
-                                                <h1 className="truncate w-3/4 text-xl">
+                                                <h1 className="truncate w-3/4 text-md">
                                                     {track.title}
                                                 </h1>
-                                                <h2 className="w-1/4 text-right text-xl">
+                                                <h2 className="w-1/4 text-right text-md">
                                                     {setTime(Number(track.duration))}
                                                 </h2>
                                             </div>
